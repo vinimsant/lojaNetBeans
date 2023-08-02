@@ -24,6 +24,8 @@ public class TelaLogin extends javax.swing.JFrame {
         
         System.out.println(usuario);
         System.out.println(senha);
+        Usuario usu = new Usuario();
+        int quantidadeUsuario = 0;
                     
        for (Usuario u : dao.ler()){
            
@@ -31,6 +33,8 @@ public class TelaLogin extends javax.swing.JFrame {
            System.out.println(u.getSenhaDoUsuario());
            if(u.getUsuario().equals(usuario) && u.getSenhaDoUsuario().equals(senha)){
                System.out.println("acesso concedido para o usuario "+u.getUsuario()); 
+               usu = u;
+               quantidadeUsuario+=1;
            }else{
                System.out.println("Acesso negado");
            }
@@ -65,6 +69,7 @@ public class TelaLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(500, 400));
+        setResizable(false);
 
         jButton1.setText("entrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {

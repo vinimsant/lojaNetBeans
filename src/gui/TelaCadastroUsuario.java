@@ -6,6 +6,7 @@
 package gui;
 
 import dao.daoUsuario;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import model.Usuario;
 
@@ -20,6 +21,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
      */
     public TelaCadastroUsuario() {
         initComponents();
+        //getContentPane().setBackground(Color.BLUE);
     }
 
     /**
@@ -46,6 +48,8 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         edtDataNascimento = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setResizable(false);
 
         jLabel1.setText("Nome");
 
@@ -68,6 +72,8 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         jLabel3.setText("Senha");
 
         edtSenha.setPreferredSize(new java.awt.Dimension(300, 22));
+
+        edtSenhaConfirmacao.setPreferredSize(new java.awt.Dimension(300, 22));
 
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -113,20 +119,17 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                     .addComponent(edtCpfUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(edtNomeUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(edtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(edtSenhaConfirmacao)
+                    .addComponent(edtSenhaConfirmacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(btnSalvar)
-                                .addGap(59, 59, 59)
-                                .addComponent(btnLimpar))
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGap(51, 51, 51)
+                        .addComponent(btnSalvar)
+                        .addGap(59, 59, 59)
+                        .addComponent(btnLimpar))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
                 .addContainerGap(150, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
